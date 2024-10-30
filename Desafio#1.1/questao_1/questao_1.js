@@ -33,19 +33,23 @@ class Vertice {
 
 }
 
-const prompt = promptSync();
+function main() {
+    const prompt = promptSync();
 
-const vertice1 = new Vertice(parseFloat(prompt('Digite o valor de x do vertice 1: ')), parseFloat(prompt('Digite o valor de y do vertice 1: ')));
-const vertice2 = new Vertice(parseFloat(prompt('Digite o valor de x do vertice 2: ')), parseFloat(prompt('Digite o valor de y do vertice 2: ')));
-const vertice3 = new Vertice(parseFloat(prompt('Digite o valor de x do vertice 3: ')), parseFloat(prompt('Digite o valor de y do vertice 3: ')));
+    const vertice1 = new Vertice(parseFloat(prompt('Digite o valor de x do vertice 1: ')), parseFloat(prompt('Digite o valor de y do vertice 1: ')));
+    const vertice2 = new Vertice(parseFloat(prompt('Digite o valor de x do vertice 2: ')), parseFloat(prompt('Digite o valor de y do vertice 2: ')));
+    const vertice3 = new Vertice(parseFloat(prompt('Digite o valor de x do vertice 3: ')), parseFloat(prompt('Digite o valor de y do vertice 3: ')));
 
-console.log('Posição do vertice 1: ', Vertice.getX(vertice1), Vertice.getY(vertice1));
-console.log('Distancia entre vertice 1 e vertice 2: ', Vertice.distancia(vertice1, vertice2));
+    console.log('Posição do vertice 1: ', Vertice.getX(vertice1), Vertice.getY(vertice1));
+    console.log('Distancia entre vertice 1 e vertice 2: ', Vertice.distancia(vertice1, vertice2));
 
-console.log('Posição do vertice 3: ', Vertice.getX(vertice3), Vertice.getY(vertice3));
-Vertice.move(vertice3, parseFloat(prompt('Digite o novo valor de x do vertice 3: ')), parseFloat(prompt('Digite o novo valor de y do vertice 3: ')));
-console.log('Nova posição do vertice 3: ', Vertice.getX(vertice3), Vertice.getY(vertice3));
+    console.log('Posição do vertice 3: ', Vertice.getX(vertice3), Vertice.getY(vertice3));
+    Vertice.move(vertice3, parseFloat(prompt('Digite o novo valor de x do vertice 3: ')), parseFloat(prompt('Digite o novo valor de y do vertice 3: ')));
+    console.log('Nova posição do vertice 3: ', Vertice.getX(vertice3), Vertice.getY(vertice3));
 
-console.log('Os vertices 1 e 2 são iguais? ', Vertice.equals(vertice1, vertice2));
+    console.log('Os vertices 1 e 2 são iguais? ', Vertice.equals(vertice1, vertice2));
+}
+
+// main();
 
 export { Vertice };

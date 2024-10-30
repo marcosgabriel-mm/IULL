@@ -56,23 +56,25 @@ class Turma {
 
 }
 
-const turma = new Turma();
+function main() {
+    const turma = new Turma();
 
-turma.adicionarAluno(new Aluno('Fernanda Abreu', 34567));
-turma.adicionarAluno(new Aluno('Joao Santos', 45678));
-turma.adicionarAluno(new Aluno('Bruno Carvalho', 23456));
-turma.adicionarAluno(new Aluno('Ana de Almeida', 12345));
+    turma.adicionarAluno(new Aluno('Fernanda Abreu', 34567));
+    turma.adicionarAluno(new Aluno('Joao Santos', 45678));
+    turma.adicionarAluno(new Aluno('Bruno Carvalho', 23456));
+    turma.adicionarAluno(new Aluno('Ana de Almeida', 12345));
 
-turma.adicionarAluno(new Aluno('Lira de Almeida', 23446));
-turma.removerAluno(23446);
+    turma.adicionarAluno(new Aluno('Lira de Almeida', 23446));
+    turma.removerAluno(23446);
 
-turma.lancarNotas(12345, 8, 9.5);
-turma.lancarNotas(23456, 7, null);
-turma.lancarNotas(34567, null, 8.5);
-turma.lancarNotas(45678, null, null);
+    turma.lancarNotas(12345, 8, 9.5);
+    turma.lancarNotas(23456, 7, null);
+    turma.lancarNotas(34567, null, 8.5);
+    turma.lancarNotas(45678, null, null);
 
-console.log('—--------------------------------------------------');
-console.log('Matrículas\tNome\t\tP1\tP2\tNF');
-console.log('—--------------------------------------------------');
-console.log(turma.listarAlunos());
-console.log('—--------------------------------------------------');
+    console.log('—--------------------------------------------------');
+    console.log('Matrículas\tNome\t\tP1\tP2\tNF');
+    console.log('—--------------------------------------------------');
+    console.log(turma.listarAlunos());
+    console.log('—--------------------------------------------------');
+}

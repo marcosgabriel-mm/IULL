@@ -1,4 +1,4 @@
-import { Vertice } from '../questão_1/questao_1.js';
+import { Vertice } from '../questao_1/questao_1.js';
 import { Poligono } from './questao_3.js';
 import promptSync from 'prompt-sync';
 

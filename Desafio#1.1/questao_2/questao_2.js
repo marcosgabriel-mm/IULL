@@ -1,5 +1,5 @@
-import { Vertice } from '../questão_1/questao_1.js';
-var prompt = require('prompt-sync')();
+import { Vertice } from "../questao_1/questao_1.js";
+import promptSync from 'prompt-sync';
 
 class Triangulo {
 
@@ -78,65 +78,68 @@ class Triangulo {
     }
 }
 
-const triangulo1 = new Triangulo(
-    new Vertice(parseFloat(prompt('Digite o valor de x do vertice 1: ')), parseFloat(prompt('Digite o valor de y do vertice 1: '))),
-    new Vertice(parseFloat(prompt('Digite o valor de x do vertice 2: ')), parseFloat(prompt('Digite o valor de y do vertice 2: '))),
-    new Vertice(parseFloat(prompt('Digite o valor de x do vertice 3: ')), parseFloat(prompt('Digite o valor de y do vertice 3: ')))
-);
+function main() {
+    const prompt = promptSync();
 
-const triangulo2 = new Triangulo(
-    new Vertice(parseFloat(prompt('Digite o valor de x do vertice 1: ')), parseFloat(prompt('Digite o valor de y do vertice 1: '))),
-    new Vertice(parseFloat(prompt('Digite o valor de x do vertice 2: ')), parseFloat(prompt('Digite o valor de y do vertice 2: '))),
-    new Vertice(parseFloat(prompt('Digite o valor de x do vertice 3: ')), parseFloat(prompt('Digite o valor de y do vertice 3: ')))
-);
+    const triangulo1 = new Triangulo(
+        new Vertice(parseFloat(prompt('Digite o valor de x do vertice 1: ')), parseFloat(prompt('Digite o valor de y do vertice 1: '))),
+        new Vertice(parseFloat(prompt('Digite o valor de x do vertice 2: ')), parseFloat(prompt('Digite o valor de y do vertice 2: '))),
+        new Vertice(parseFloat(prompt('Digite o valor de x do vertice 3: ')), parseFloat(prompt('Digite o valor de y do vertice 3: ')))
+    );
 
-const triangulo3 = new Triangulo(
-    new Vertice(parseFloat(prompt('Digite o valor de x do vertice 1: ')), parseFloat(prompt('Digite o valor de y do vertice 1: '))),
-    new Vertice(parseFloat(prompt('Digite o valor de x do vertice 2: ')), parseFloat(prompt('Digite o valor de y do vertice 2: '))),
-    new Vertice(parseFloat(prompt('Digite o valor de x do vertice 3: ')), parseFloat(prompt('Digite o valor de y do vertice 3: ')))
-);
+    const triangulo2 = new Triangulo(
+        new Vertice(parseFloat(prompt('Digite o valor de x do vertice 1: ')), parseFloat(prompt('Digite o valor de y do vertice 1: '))),
+        new Vertice(parseFloat(prompt('Digite o valor de x do vertice 2: ')), parseFloat(prompt('Digite o valor de y do vertice 2: '))),
+        new Vertice(parseFloat(prompt('Digite o valor de x do vertice 3: ')), parseFloat(prompt('Digite o valor de y do vertice 3: ')))
+    );
 
-while (true) {
+    const triangulo3 = new Triangulo(
+        new Vertice(parseFloat(prompt('Digite o valor de x do vertice 1: ')), parseFloat(prompt('Digite o valor de y do vertice 1: '))),
+        new Vertice(parseFloat(prompt('Digite o valor de x do vertice 2: ')), parseFloat(prompt('Digite o valor de y do vertice 2: '))),
+        new Vertice(parseFloat(prompt('Digite o valor de x do vertice 3: ')), parseFloat(prompt('Digite o valor de y do vertice 3: ')))
+    );
 
-    console.log('1 - Verificar se dois triangulos são iguais');
-    console.log('2 - Verificar o perimetro de um triangulo');
-    console.log('3 - Verificar o tipo de um triangulo');
-    console.log('4 - Clonar um triangulo');
-    console.log('5 - Verificar a area de um triangulo');
+    while (true) {
 
-    const opcao = parseInt(prompt('Digite a opção desejada: '));
+        console.log('1 - Verificar se dois triangulos são iguais');
+        console.log('2 - Verificar o perimetro de um triangulo');
+        console.log('3 - Verificar o tipo de um triangulo');
+        console.log('4 - Clonar um triangulo');
+        console.log('5 - Verificar a area de um triangulo');
 
-    switch (opcao) {
-        case 1:
-            console.log('Escolha dois triangulos para comparar: ');
-            escolha = parseInt(prompt('Escolha o primeiro triangulo (1, 2 ou 3): '));
-            Triangulo.equals(escolha1 === 1 ? triangulo1 : escolha1 === 2 ? triangulo2 : triangulo3);
-            break;
-        case 2:
-            console.log('Escolha um triangulo para verificar o perimetro: ');
-            escolha = parseInt(prompt('Escolha o triangulo (1, 2 ou 3): '));
-            console.log('Perimetro do triangulo: ', Triangulo.perimetro(escolha === 1 ? triangulo1 : escolha === 2 ? triangulo2 : triangulo3));
-            break;
-        case 3:
-            console.log('Escolha um triangulo para verificar o tipo: ');
-            escolha = parseInt(prompt('Escolha o triangulo (1, 2 ou 3): '));
-            console.log('Tipo do triangulo: ', Triangulo.tipo(escolha === 1 ? triangulo1 : escolha === 2 ? triangulo2 : triangulo3));
-            break;
-        case 4:
-            console.log('Escolha um triangulo para clonar: ');
-            escolha = parseInt(prompt('Escolha o triangulo (1, 2 ou 3): '));
-            const trianguloClonado = Triangulo.clone(escolha === 1 ? triangulo1 : escolha === 2 ? triangulo2 : triangulo3);
-            console.log('Vertices do triangulo clonado: ', trianguloClonado.getVertices());
-            break;
-        case 5:
-            console.log('Escolha um triangulo para verificar a area: ');
-            escolha = parseInt(prompt('Escolha o triangulo (1, 2 ou 3): '));
-            console.log('Area do triangulo: ', Triangulo.area(escolha === 1 ? triangulo1 : escolha === 2 ? triangulo2 : triangulo3));
-            break;
-        default:
-            break;
+        const opcao = parseInt(prompt('Digite a opção desejada: '));
+
+        switch (opcao) {
+            case 1:
+                console.log('Escolha dois triangulos para comparar: ');
+                escolha = parseInt(prompt('Escolha o primeiro triangulo (1, 2 ou 3): '));
+                Triangulo.equals(escolha1 === 1 ? triangulo1 : escolha1 === 2 ? triangulo2 : triangulo3);
+                break;
+            case 2:
+                console.log('Escolha um triangulo para verificar o perimetro: ');
+                escolha = parseInt(prompt('Escolha o triangulo (1, 2 ou 3): '));
+                console.log('Perimetro do triangulo: ', Triangulo.perimetro(escolha === 1 ? triangulo1 : escolha === 2 ? triangulo2 : triangulo3));
+                break;
+            case 3:
+                console.log('Escolha um triangulo para verificar o tipo: ');
+                escolha = parseInt(prompt('Escolha o triangulo (1, 2 ou 3): '));
+                console.log('Tipo do triangulo: ', Triangulo.tipo(escolha === 1 ? triangulo1 : escolha === 2 ? triangulo2 : triangulo3));
+                break;
+            case 4:
+                console.log('Escolha um triangulo para clonar: ');
+                escolha = parseInt(prompt('Escolha o triangulo (1, 2 ou 3): '));
+                const trianguloClonado = Triangulo.clone(escolha === 1 ? triangulo1 : escolha === 2 ? triangulo2 : triangulo3);
+                console.log('Vertices do triangulo clonado: ', trianguloClonado.getVertices());
+                break;
+            case 5:
+                console.log('Escolha um triangulo para verificar a area: ');
+                escolha = parseInt(prompt('Escolha o triangulo (1, 2 ou 3): '));
+                console.log('Area do triangulo: ', Triangulo.area(escolha === 1 ? triangulo1 : escolha === 2 ? triangulo2 : triangulo3));
+                break;
+            default:
+                break;
+        }
     }
-
 }
 
 export { Triangulo };
